@@ -17,8 +17,7 @@ def extraer_fecha_hora(df, col='timestamp'):
         df['hour'] = df[col].dt.hour
     return df
 
-def eliminar_columnas(df, cols=['vm_id', 'timestamp', 'cpu_per_instruction', 
-                                'memory_per_task', 'power_per_time', 'traffic_per_cpu']):
+def eliminar_columnas(df, cols=['vm_id', 'timestamp']):
     return df.drop(columns=[c for c in cols if c in df.columns], errors='ignore')
 
 def cargar_y_limpieza(ruta_csv):
